@@ -1,0 +1,105 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="detail-view">
+    <template>
+        <style>
+            :host {
+                display: block
+            }
+        </style>
+
+        <div class="main">
+            <section class="main-section--conctac_detail">
+                
+                    <h3>Detail view</h3>
+                    <div class="contact-detail-div">
+                        <div class="contact-detail-div--btn__left">
+                            <span class="leftIcon"></span>
+                        </div>
+                        <div class="contact-detail-div--container">
+                            <div class="contact-detail-div--container__up">
+                                <button class="close-button" on-click="closeDetail"><small>close</small></button>
+                                <h3>[[selectedContact.name]]</h3>
+                                <span class="icon-edit"></span>
+                            </div>
+                            <div class="contact-detail-div--container__middle">
+                                <div class="container__middle-icon">
+                                    <p class="detail-p">[[_formatType(selectedContact.type)]]</p><span class="icon-edit"></span>
+                                </div>
+                                <div class="container__middle-fields">
+                                    <small class="detail-small">phone</small>
+                                    <p class="detail-p">[[selectedContact.phone]]</p><span class="icon-edit"></span>
+                                    <small class="detail-small">email</small>
+                                    <p class="detail-p">[[selectedContact.email]]</p><span class="icon-edit"></span>
+                                </div>
+                            </div>
+                            <div class="contact-detail-div--container__down">
+                                <small class="detail-small">hobbies</small>
+                                <p class="detail-p">[[selectedContact.hobbies]]</p><span class="icon-edit"></span>
+                            </div>
+                        </div>
+                        <div class="contact-detail-div--btn__right">
+                            <span class="rightIcon"></span>
+                        </div>
+                    </div>
+                    <div class="buttons-section">
+                        <button id="delete-btn" class="buttons-section--delete" on-click="addContact">DELETE</button>
+                        <button class="back-btn">Go back</button>
+                    </div>
+
+            </section>
+        </div>
+
+    </template>
+
+    <script>
+        /**
+         * `detail-view` Description
+         *
+         * @summary ShortDescription.
+         * @customElement
+         * @polymer
+         * @extends {Polymer.Element}
+         */
+        class DetailView extends Polymer.Element {
+            /**
+             * String providing the tag name to register the element under.
+             */
+            static get is() {
+                return 'detail-view';
+            }
+
+            /**
+             * Object describing property-related metadata used by Polymer features
+             */
+            static get properties() {
+                return {
+                    
+                };
+            }
+
+            /**
+             * Instance of the element is created/upgraded. Use: initializing state,
+             * set up event listeners, create shadow dom.
+             * @constructor
+             */
+            constructor() {
+                super();
+            }
+
+            /**
+             * Use for one-time configuration of your component after local DOM is initialized. 
+             */
+            ready() {
+                super.ready();
+
+                Polymer.RenderStatus.afterNextRender(this, function() {
+                    
+                });
+            }
+
+        }
+
+        window.customElements.define(DetailView.is, DetailView);
+    </script>
+</dom-module>

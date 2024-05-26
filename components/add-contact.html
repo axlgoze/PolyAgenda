@@ -1,0 +1,96 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="add-contact">
+    <template>
+        <style>
+            :host {
+                display: block
+            }
+        </style>
+
+        <div class="main">
+            <section class="main-section">
+                <h2>Adding a Contact</h2>
+        <div class="main-adding-div">
+            <div class="main-adding-div_container">
+    
+                <div class="main-adding-div_fields">
+    
+                    <div class="adding-fields_name">
+                        <span>Name</span>
+                        <div class="adding-fields_input__name"><input type="text" placeholder="Name" id="name" value="{{contact.name::input}}"></div>
+                    </div>
+    
+                    <div class="adding-fields_phone">
+                        <span>Phone</span>
+                        <div class="adding-fields_input__phone"><input type="text" placeholder="5512345678" id="phone" value="{{contact.phone::input}}"></div>
+                    </div>
+    
+                    <div class="adding-fields_email">
+                        <span>Email</span>
+                        <div class="adding-fields_input__email"><input type="text" placeholder="email@email.com" id="email" value="{{contact.email::input}}"></div>
+                    </div>
+    
+                    <div class="adding-fields_hobbies">
+                        <span>Hobbies</span>
+                        <div class="adding-fields_input__hobbies"><input type="text" placeholder="hobby1, hobby2, ..." id="hobbies" value="{{contact.hobbies::input}}"></div>
+                    </div>
+    
+                    <div class="adding-fields_type">
+                        <span>Contact type</span>
+                        <div class="adding-fields_input__type">
+                            <select name="" id="type" value="{{contact.type::change}}">
+                                <option value="true">Work contact</option>
+                                <option value="false">School contact</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="buttons-section">
+                <button id="add-btn" class="buttons-section--add" on-click="addContact">ADD</button>
+                <button class="back-btn">Go back</button>
+                <!-- <button id="add-btn" class="main-adding-div_buttons__add" on-click="dispatchAddContactEvent">ADD</button> -->
+                <!-- <button class="main-adding-div_buttons__cancel" on-click="clearFields">Clear</button> -->
+            </div>
+            </section>
+        </div>
+
+    </template>
+
+    <script>
+        class AddContact extends Polymer.Element {
+            static get is() {return 'add-contact';}
+
+            static get properties() {
+                return {
+                    
+                };
+            }
+
+            /**
+             * Instance of the element is created/upgraded. Use: initializing state,
+             * set up event listeners, create shadow dom.
+             * @constructor
+             */
+            constructor() {
+                super();
+            }
+
+            /**
+             * Use for one-time configuration of your component after local DOM is initialized. 
+             */
+            ready() {
+                super.ready();
+
+                Polymer.RenderStatus.afterNextRender(this, function() {
+                    
+                });
+            }
+
+        }
+
+        window.customElements.define(AddContact.is, AddContact);
+    </script>
+</dom-module>

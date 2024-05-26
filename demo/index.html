@@ -10,7 +10,14 @@
 
     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+
     <link rel="import" href="../main-component.html">
+    <link rel="import" href="../components/main-header.html">
+    <link rel="import" href="../components/show-contacts.html">
+    <link rel="import" href="../components/add-contact.html">
+    <link rel="import" href="../components/detail-view.html">
+
+    <title>Agenda Virtual</title>
 
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles">
@@ -18,13 +25,21 @@
     </custom-style>
   </head>
   <body>
+
     <div class="vertical-section-container centered">
-      <h3>Basic main-component demo</h3>
+      <h3>Basic agenda demo</h3>
+
+      <small>before snippet</small>
       <demo-snippet>
         <template>
+          <main-header></main-header>
+          <show-contacts></show-contacts>
           <main-component></main-component>
+          <add-contact></add-contact>
+          <detail-view></detail-view>
         </template>
       </demo-snippet>
     </div>
+
   </body>
 </html>

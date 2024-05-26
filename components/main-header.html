@@ -1,0 +1,54 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="main-header">
+    <template>
+        <style>
+            :host {
+                display: block
+            }
+        </style>
+
+        <div class="main">
+            <section class="main-section">
+                <div class="main-section--title">
+                    <span class="main-section--title__logo"></span>
+                    <h1 class="main-section--title__log">Agenda Virtual</h1>
+                </div>
+                <div class="main-section--buttons">
+                    <button class="main-section--buttons__add" on-click="_addContact"></button>
+                    <button class="main-section--buttons__edit" on-click="_editContact"></button>
+                </div>
+            </section>
+        </div>
+
+    </template>
+
+    <script>
+        class MainHeader extends Polymer.Element {
+            
+            static get is() {return 'main-header';}
+
+            static get properties() {
+                return {
+                    
+                };
+            }
+
+            
+            constructor() {
+                super();
+            }
+
+            ready() {
+                super.ready();
+
+                Polymer.RenderStatus.afterNextRender(this, function() {
+                    
+                });
+            }
+
+        }
+
+        window.customElements.define(MainHeader.is, MainHeader);
+    </script>
+</dom-module>
